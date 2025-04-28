@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: rgb(39, 35, 35);
+        }
+
+        span {
+            user-select: none;
+            cursor: default;
+            font-size: 20px;
+            color: blanchedalmond;
+            position: absolute;
+            transition: 1s;
+        }
+        .back-button {
+            position: absolute; 
+            top: 10px; 
+            left: 10px; 
+            padding: 10px 20px; 
+            text-decoration: none; 
+            color: purple; 
+            background-color: #f8f8f8; 
+            border: 2px solid black; 
+            border-radius: 5px; 
+            cursor: pointer; 
+            font-weight: bold; 
+        }
+    </style>
+</head>
+
+<body>
+
+    <script>
+        var arr = [ "It's great, attending events at event society has been the best event experience of my life!", "I have made many good friends at events society and enriched my life after school.", "항상 너무 좋아서 더 이상 사교 행사에 방관자가 되지 않습니다.", "今夜我为主角", "この国を知らない多くの人たちとここで出会えるのは素晴らしいことだ。", "Prost, lass uns etwas trinken.", "A tous les soirs de week-end que nous aurons.", "Soo greatttttt!", "That's honestly so useful for socalizing", "Highly recommend you guys join our society", "Bye my coursework cuz tonight is Fridayyyy", "Hi nico how are u", "cuz i want you to know ", , "É uma comunidade muito calorosa.", "Hola a todos.", "give our warm welcome to those who new here", "The one and Only", "Enjoy yourself here",  "Let's have funnnnn!",  "青春時光轉瞬即逝","Ha ett trevligt liv.","enjoy your weekend guys","always exploring","Night night:) "]
+        document.onclick = function (x) {
+            var span = document.createElement("span")
+            span.style.left = x.clientX + "px"
+            span.style.top = x.clientY + "px"
+            span.innerHTML = arr[Math.floor(Math.random() * arr.length)]
+
+            setTimeout(function () {
+                span.style.opacity = "1"
+                span.style.transform = "translateY(-100px)"
+            }, 100)
+
+            setTimeout(function () {
+                span.style.opacity = "0.2"
+                span.style.transform = "translateY(-230px)"
+            }, 1500)
+
+            setTimeout(function () {
+                var chi = document.getElementsByTagName("span")
+                for (var i = 0; i < chi.length; i++) {
+                    if (chi[i].style.opacity == "0") {
+                        document.body.removeChild(chi[i])
+                    }
+                }
+            }, 1000)
+            document.body.appendChild(span)
+        }
+
+    </script>
+   <a href="javascript:history.back()" class="back-button">Back</a>
+   <h1 style="text-align: center">Just Click the Background to hear our Voice</h1>
+</body>
+
+</html> 
